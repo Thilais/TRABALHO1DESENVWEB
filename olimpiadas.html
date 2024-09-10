@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Idades</title>
+    <style>
+        .marca {
+            height: 50px;
+            background: blue;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            padding-left: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+            min-width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Faixa etária atletas - Olimpiadas 2016</h1>
+    <div id="grafico"></div>
+
+    <script>
+        const faixas = [
+            {
+                idade: 'Menos de 18 anos',
+                valor:'1,04%',
+                tamanho: 1.04,
+            },
+            {
+                idade: 'entre 18 e 25 anos',
+                valor:'46,61%',
+                tamanho: 46.61,
+            },
+            {
+                idade: 'entre 26 e 29 anos',
+                valor:'29,66%',
+                tamanho: 29.66,
+            },
+
+            {
+                idade: '30 anos ou mais',
+                valor:'22,69%',
+                tamanho: 22.69,
+            },
+        
+        ];
+
+        for (let faixa of faixas) {
+            let div = `
+            <div 
+            class="marca"  
+            style="width:${faixa.tamanho * 10}px">
+            ${faixa.idade + '  ' + faixa.valor}
+            </div>`;
+            grafico.innerHTML += div;
+        }
+
+    </script>
+</body>
+</html>
